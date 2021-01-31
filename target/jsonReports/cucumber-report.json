@@ -1,0 +1,204 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-01-26T13:19:59.572Z",
+        "line": 12,
+        "name": "Verfying Add place added using app place API",
+        "description": "",
+        "id": "place-api-validation;verfying-add-place-added-using-app-place-api;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 2427000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Add place payload \"xyz\" \"English\" \"Vancrover BC\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"xyz\"",
+                  "offset": 18
+                },
+                {
+                  "val": "\"English\"",
+                  "offset": 24
+                },
+                {
+                  "val": "\"Vancrover BC\"",
+                  "offset": 34
+                }
+              ],
+              "location": "stepDefinations.Payload.add_place_payload(java.lang.String,java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3613000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user call \"AddPlaceApi\" with \"Post\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"AddPlaceApi\"",
+                  "offset": 10
+                },
+                {
+                  "val": "\"Post\"",
+                  "offset": 29
+                }
+              ],
+              "location": "stepDefinations.Payload.user_call_with_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 833000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Api \"status\" in responce body is \"OK\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"status\"",
+                  "offset": 4
+                },
+                {
+                  "val": "\"OK\"",
+                  "offset": 33
+                }
+              ],
+              "location": "stepDefinations.Payload.api_in_responce_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2012000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Verify place id has same as \"xyz\" using \"GetPlaceApi\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"xyz\"",
+                  "offset": 28
+                },
+                {
+                  "val": "\"GetPlaceApi\"",
+                  "offset": 40
+                }
+              ],
+              "location": "stepDefinations.Payload.verify_place_id_has_same_as_using(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@AddPlace"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-01-26T13:20:08.737Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefinations.Hooks.beforeScrenario()"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "Verifying Added Place is deleted",
+        "description": "",
+        "id": "place-api-validation;verifying-added-place-is-deleted",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "Delete place payload",
+            "match": {
+              "location": "stepDefinations.Payload.delete_place_payload()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2417000000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "user call \"DeletePlaceApi\" with \"Post\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"DeletePlaceApi\"",
+                  "offset": 10
+                },
+                {
+                  "val": "\"Post\"",
+                  "offset": 32
+                }
+              ],
+              "location": "stepDefinations.Payload.user_call_with_http_request(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 40000000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "Api \"status\" in responce body is \"OK\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"status\"",
+                  "offset": 4
+                },
+                {
+                  "val": "\"OK\"",
+                  "offset": 33
+                }
+              ],
+              "location": "stepDefinations.Payload.api_in_responce_body_is(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@DeletePlace"
+          }
+        ]
+      }
+    ],
+    "name": "Place Api validation",
+    "description": "",
+    "id": "place-api-validation",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/features/placeValidation.feature",
+    "tags": []
+  }
+]
