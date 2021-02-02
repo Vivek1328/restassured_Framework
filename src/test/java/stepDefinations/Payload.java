@@ -42,6 +42,7 @@ public class Payload {
 	    	
         
         
+		System.out.println("Everything works fine");
 		
 	    ra=new ResponseSpecBuilder().expectStatusCode(200).build();
 	    ret = given().log().all().spec(util.reqBuilder()).body(add.addLocation(name,language,address));
